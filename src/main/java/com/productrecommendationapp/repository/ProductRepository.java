@@ -10,6 +10,8 @@ import java.util.List;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
+
+     // Not used
     @Query("SELECT p FROM Product p WHERE (:subCategories IS NULL OR p.subCategory IN :subCategories) " +
             "OR (:brands IS NULL OR p.brand IN :brands) ORDER BY " +
             "CASE WHEN p.subCategory IN :subCategories THEN 1 ELSE 2 END, " +
